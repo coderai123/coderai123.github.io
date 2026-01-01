@@ -347,7 +347,7 @@
                         </li>
                         <li>DistributedCaching of alerts on database servers to reduce load on alerting APIs.</li>
                         <li>Usage of network maintenance APIs to do pre-emptive automatedswitchovers of database primaries during the period of low traffic.</li>
-                        <li>MySQL Clusters DNS Migration from a deprecated platform to a new one.</li>
+                        <li>MySQL Clusters DNS Migration (3 months+ project) from a deprecated platform to a new one.</li>
                         <li>Cost saving measures during covid to reduce MySQL Database Servers. One initiative I took was to merge pools of read replicas with low traffic (identified using query load, number of connections, query latency, peak timings, etc.). This measure resulted in saving over 200 servers saving millions for the company.</li>
                         <li>Fast external service to monitor read/write availability of MySQL databases. It can ping thousands of servers every second and gave a better view of availability and latency metrics to MySQL clients. The service was written in Go and extensively used Go concurrency patterns. These availability and latency metrics were directly used by MySQL Service's SLO dashboards.</li>
                         <li>Tools for publishing critical alerts like disk space usage directly to MySQL clients so that they can take pre-emptive action. Additionally, I kept the corresponding opdocs up-to-date for correct handling of such alerts.</li>
@@ -396,9 +396,31 @@
                 </div>
                 
                 <div class="project">
-                    <h4>Amazon Central Machine Learning Platform - Feature Repository</h4>
+                    <h4>Amazon Central Machine Learning Platform - Feature Repository and Vector Embeddings</h4>
                     <p>Worked on Amazon's central Machine Learning platform, including a Feature Repository for publishing and accessing pre-computed features for model training and production.</p>
+                    <ul class="project-features">
+                        <li>
+                            Generation of Product Embeddings based on Multi Modal Data: Collaborated with ML Scientists on a project where a Siamese architecture
+                            (similar/dissimilar products) based supervised DNNs approach was used
+                            to generate product embeddings. I helped in pre-training where raw
+                            product data was transformed to  embeddings using unsupervised
+                            approaches.
+                        </li>
+                        <li>
+                            Improved efficiency of Feature Repository  (FR): Added critical
+                            features in FR for storage and retrieval of terabytes of features
+                            generated  by ML scientists including vector embeddings. This also required performance
+                            tuning of Spark jobs on AWS EMR clusters. Ultimately, the FR had
+                            better operational hygiene with no SLO  breaches instead of the long
+                            standing performance issues.
+                        </li>
+                    </ul>
                     <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Spark</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">EMR</span>
                         <span class="tag">ML Platform</span>
                         <span class="tag">Feature Store</span>
                         <span class="tag">Machine Learning</span>
@@ -409,7 +431,9 @@
 
                 <div class="project">
                     <h4>Shipment Purchase Workflow & APIs</h4>
-                    <p>Designed, implemented, and owned the shipment purchase workflow and APIs for logistics.</p>
+                    <p>Designed, implemented, and owned the shipment purchase workflow and APIs for logistics. I also added optimizations such as asynchronous processing of some order creation aspects which significantly improved throughput and system resilience.This system
+                        forms the bedrock of Amazon Logistics in India today serving millions
+                        of orders every month.</p>
                     <div class="tags">
                         <span class="tag">Java</span>
                         <span class="tag">API Design</span>
@@ -421,7 +445,9 @@
 
                 <div class="project">
                     <h4>Data Migration - DynamoDB to MatrixDB</h4>
-                    <p>Migrated shipment data from DynamoDB to MatrixDB, Amazon's internal document datastore.</p>
+                    <p>Migrated shipment data from DynamoDB to MatrixDB, Amazon's internal document datastore. This migration drastically
+                        improved backend efficiency while keeping the user experience on the
+                        logistics portal seamless and responsive.</p>
                     <div class="tags">
                         <span class="tag">DynamoDB</span>
                         <span class="tag">Data Migration</span>
